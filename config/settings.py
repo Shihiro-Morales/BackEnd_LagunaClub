@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-5&-7wu52#d%l9_^9k96src#-(o5)6(_k(edtmq_3y-^a&v-394
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'backend-lagunaclub.onrender.com',
+    '127.0.0.1',
+    'localhost'
+]
 
 
 # Application definition
