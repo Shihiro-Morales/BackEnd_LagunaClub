@@ -32,6 +32,7 @@ from Apps.Movimientos.Pago.API.urls import routerPago
 from Apps.Movimientos.Reserva.API.urls import routerReserva
 from Apps.Catalogos.Servicio.API.urls import routerServicio
 from Seguridad.Usuario.API.UsuariosApi import UserCreateView
+from Seguridad.Temporal.Temporal import crear_admin
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -110,5 +111,5 @@ path(
         schema_view.with_ui('redoc', cache_timeout=0),
         name='schema-redoc'),
 
-
+    path('crear-admin/', crear_admin),
 ]
