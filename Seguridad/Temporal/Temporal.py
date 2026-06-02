@@ -1,9 +1,8 @@
 from django.contrib.auth import get_user_model
-from gunicorn.config import User
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-
+User = get_user_model()
 @api_view(['POST'])
 def crear_admin(request):
 
