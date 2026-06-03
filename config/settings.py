@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-5&-7wu52#d%l9_^9k96src#-(o5)6(_k(edtmq_3y-^a&v-394
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://oceanbeachclub-web.vercel.app",
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 ALLOWED_HOSTS = [
     'backend-lagunaclub.onrender.com',
@@ -63,9 +67,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  #DEBE IR PRIMERO
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-'corsheaders.middleware.CorsMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
