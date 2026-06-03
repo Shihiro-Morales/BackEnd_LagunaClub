@@ -3,14 +3,21 @@ from rest_framework import serializers
 
 from Seguridad.Usuario.models import Usuario
 
-
 class UserCreateSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     password2 = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = Usuario
-        fields = ('username', 'email', 'password', 'password2', 'first_name', 'last_name')
+        fields = (
+            'username',
+            'email',
+            'password',
+            'password2',
+            'first_name',
+            'last_name',
+            'telefono',  # 👈 AGREGADO
+        )
 
     def validate(self, attrs):
         if attrs['password'] != attrs['password2']:
@@ -18,8 +25,6 @@ class UserCreateSerializer(serializers.ModelSerializer):
         return attrs
 
     def create(self, validated_data):
-        print(validated_data)
-
         validated_data.pop('password2')
 
         usuario = Usuario(
@@ -27,6 +32,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
             email=validated_data['email'],
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
+            telefono=validated_data.get('telefono'),  #  IMPORTANTE
             tipo_usuario='turista'
         )
 
@@ -34,4 +40,3 @@ class UserCreateSerializer(serializers.ModelSerializer):
         usuario.save()
 
         return usuario
-
