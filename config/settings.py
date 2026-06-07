@@ -30,7 +30,7 @@ DEBUG = True
 CORS_ALLOWED_ORIGINS = [
     "https://lagunabeachclub-web.vercel.app",
     "https://pruebacarusel.vercel.app",
-    "https://pruebacarusel-pixbv167g-ac5822942-1352s-projects.vercel.app"
+    "https://pruebacarusel-a8w0pxd5v-ac5822942-1352s-projects.vercel.app"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
