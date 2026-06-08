@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5&-7wu52#d%l9_^9k96src#-(o5)6(_k(edtmq_3y-^a&v-394
 DEBUG = True
 
 CORS_ALLOWED_ORIGINS = [
-    "plataforma-lagunabeachclub.vercel.app",
+    "https://plataforma-lagunabeachclub.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
