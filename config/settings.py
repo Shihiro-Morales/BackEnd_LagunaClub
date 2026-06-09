@@ -29,6 +29,7 @@ DEBUG = True
 
 CORS_ALLOWED_ORIGINS = [
     "https://plataforma-lagunabeachclub.vercel.app",
+    " http://localhost:3000",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
